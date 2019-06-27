@@ -18,5 +18,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(tl)
+        Intent(this,HomeActivity::class.java).apply {
+            startActivity(this)
+        }
     }
 }

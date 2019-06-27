@@ -21,7 +21,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
     @SuppressWarnings("all")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_user_home)
         Log.i("wangqiang", "onCreate")
         Observable.interval(1, TimeUnit.SECONDS).map {
             throw RuntimeException("Error")
@@ -34,7 +34,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             Log.i("wangqiang", "onDisposed")
         }.subscribe({
             Log.i("wangqiang", "onNext:$it")
-        }){
+        }) {
             Log.i("wangqiang", it.message)
         }
     }

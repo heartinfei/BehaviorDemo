@@ -9,27 +9,26 @@
     <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             app:expanded="false"
+            app:liftOnScroll="true"
             android:layout_height="wrap_content">
         <android.support.design.widget.CollapsingToolbarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:contentScrim="#0f0"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
             <ImageView
                     android:id="@+id/iv"
                     android:layout_width="match_parent"
                     android:src="@drawable/ic_launcher_background"
-                    app:layout_collapseMode="parallax"
+                    app:layout_collapseMode="pin"
                     app:layout_collapseParallaxMultiplier="0.5"
                     android:layout_height="500dp"/>
-            <android.support.v7.widget.Toolbar
-                    android:id="@+id/tl"
+            <TextView
+                    android:id="@+id/tv"
+                    app:layout_collapseParallaxMultiplier="@android:integer/config_longAnimTime"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#7f00"
-                    app:layout_collapseMode="pin"
-                    app:navigationIcon="@drawable/ic_launcher_background"/>
+                    android:background="#00f"
+                    android:layout_height="50dp"/>
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -61,4 +60,12 @@
                     app:cardElevation="3dp"/>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/tl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#7f00"
+            app:layout_anchor="@id/iv"
+            app:layout_anchorGravity="top"
+            app:navigationIcon="@drawable/ic_launcher_background"/>
 </android.support.design.widget.CoordinatorLayout>
