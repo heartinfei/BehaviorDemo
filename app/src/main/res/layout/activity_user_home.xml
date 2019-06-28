@@ -8,6 +8,7 @@
 
     <android.support.design.widget.AppBarLayout
             android:id="@+id/appBarLayout"
+            app:layout_behavior=".HeaderBehavior"
             android:layout_height="wrap_content"
             android:layout_width="match_parent">
 
@@ -18,7 +19,8 @@
                 app:titleEnabled="false"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
             <!--User info content.-->
-            <android.support.v4.widget.NestedScrollView
+            <ScrollView
+                    app:layout_collapseParallaxMultiplier="1"
                     android:id="@+id/nsvUserInfo"
                     android:layout_marginTop="?attr/actionBarSize"
                     android:layout_width="match_parent"
@@ -44,7 +46,7 @@
                             app:cardElevation="3dp"/>
                 </LinearLayout>
 
-            </android.support.v4.widget.NestedScrollView>
+            </ScrollView>
 
             <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
@@ -68,10 +70,26 @@
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <android.support.v4.view.ViewPager
-                android:id="@+id/viewPager"
+        <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="wrap_content">
+            <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginBottom="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    app:cardElevation="3dp"/>
+
+            <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginBottom="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    app:cardElevation="3dp"/>
+        </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
 

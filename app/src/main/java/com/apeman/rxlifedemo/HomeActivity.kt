@@ -23,16 +23,16 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_user_home)
         setSupportActionBar(findViewById(R.id.toolbar))
         S.init(Configuration()).addPlans(DebugPlan())
-        S.i(nsvUserInfo.measuredHeight.toString())
-        nsvUserInfo.post {
-            S.i("ScrollView 高度：" + nsvUserInfo.measuredHeight.toString())
-            S.i("最大滚动距离：" + nsvUserInfo.maxScrollAmount)
-            S.i("collapsingToolbar高度：" + collapsingToolbar.measuredHeight.toString())
-            S.i("coordinator 高度：" + coordinator.measuredHeight)
-            S.i("appBarLayout 高度：" + appBarLayout.measuredHeight)
-            collapsingToolbar.layoutParams.height = coordinator.measuredHeight - tabLayout.measuredHeight
-            appBarLayout.layoutParams.height = coordinator.measuredHeight
-        }
+//        S.i(nsvUserInfo.measuredHeight.toString())
+//        nsvUserInfo.post {
+//            S.i("ScrollView 高度：" + nsvUserInfo.measuredHeight.toString())
+//            S.i("最大滚动距离：" + nsvUserInfo.maxScrollAmount)
+//            S.i("collapsingToolbar高度：" + collapsingToolbar.measuredHeight.toString())
+//            S.i("coordinator 高度：" + coordinator.measuredHeight)
+//            S.i("appBarLayout 高度：" + appBarLayout.measuredHeight)
+//            collapsingToolbar.layoutParams.height = coordinator.measuredHeight - tabLayout.measuredHeight
+//            appBarLayout.layoutParams.height = coordinator.measuredHeight
+//        }
     }
 
     private fun rxTest() {
